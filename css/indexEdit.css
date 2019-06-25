@@ -1,0 +1,160 @@
+.main-box{
+	/*width: 1200px;*/
+	/*margin: 0 auto;*/
+	/*padding-top: 80px;
+	padding-bottom: 200px;*/
+	padding-bottom: 50px;
+}
+.road-link{
+	font-size: 18px;
+	color: #666;
+}
+.tip-info{
+	font-size: 14px;
+	color: #666666;
+	margin: 30px 0;
+}
+.tip-info .red-font{
+	color: red;
+}
+.tip-info .greed-font{
+	color: green;
+}
+.insur-name{
+	font-size: 18px;
+	color: #333;
+}
+.filter-menu{
+	margin-top: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #efefef;
+}
+.filter-menu .menu-name:first-child{
+	margin-left: 0;
+}
+.menu-name{
+	font-size: 16px;
+	margin-left: 30px;
+}
+.med-type-select{
+	height: 30px;
+	line-height: 30px;
+	margin-left: 10px;
+	padding-left: 5px;
+	display: inline-block;
+}
+.time-input{
+	width: auto;
+}
+.med-type-select option{
+	height: 30px;
+	line-height: 30px;
+}
+.time-input{
+	text-align: center;	
+}
+.jexcel > div > table > tbody > tr > td{
+	padding: 10px 4px;
+}
+.jexcel > div > table > thead > tr > td{
+	padding: 16px 4px;
+}
+
+.foot-btns-box{
+	margin-top: 50px;
+}
+.foot-btn{
+	width: 100px;
+	height: 40px;
+	background-color: #00aca0;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	display: inline-block;
+	cursor: pointer;
+}
+.foot-btn:active{
+	background: #00A088;
+}
+.btn-out-excel{
+	width: 100px;
+	margin-left: 200px;
+}
+.btn-confirm{
+	width: 300px;
+	margin-left: 50px;
+}
+.table-set-btn{
+	padding: 0 3px;
+	width: 50px;
+	font-size: 12px;
+	background: #00ACA0;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+	margin: 0 auto;
+}
+td select{
+	color: #000;
+}
+.jexcel > div > table > tbody > tr > td{
+	position: relative;
+}
+.cell-data-null-icon{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    margin-top: -2px;
+    color: #999;
+}
+.cell-data-null-icon-warring{
+	color: #00ACA0;
+}
+.table-check-box{
+	vertical-align: middle;
+}
+.check-num{
+	position: absolute;
+	margin-left: 4px;
+}
+.header-check{
+	margin: 0 !important;
+	margin-right: 4px;
+}
+td{
+	position: relative;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.handsontable td, .handsontable th{
+	vertical-align: middle;
+}
+.options-box-item button{
+	padding: 5px 10px;
+}
+.table-bot-bar{
+	width: 100%;
+	position: fixed;
+	height: 50px;
+	left: 0;
+	bottom: 0;
+	border-top: 2px solid #efefef;
+	background: white;
+	z-index: 9999;
+}
+.table-bot-bar p{
+	line-height: 50px;
+	padding-left: 50px;
+}
+.table-bot-bar p input{
+	width: 50px;
+}
+
+.readonly-back{
+	text-align: center;
+	background-color: #EFEFEF !important;
+	color: #777 !important;
+}

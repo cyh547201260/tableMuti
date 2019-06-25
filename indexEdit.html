@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		
+		<link rel="stylesheet" type="text/css" href="dist/css/jquery.jexcel.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/jquery.jcalendar.css"/>
+		<script src="dist/js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="dist/js/handsontable.full.min.js"></script>
+		<link href="dist/css/handsontable.full.min.css" rel="stylesheet" media="screen">
+		<script src="dist/js/zh-CN.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css" type="text/css" />-->
+		
+		<link rel="stylesheet" type="text/css" href="dist/css/insgeek.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="dist/css/datepicker3.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/sweetalert.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/global.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/loading.css"/>
+		
+		<script src="dist/js/bootstrap-datepicker.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/jquery.jexcel.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/jquery.jcalendar.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/sweetalert.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="dist/js/address/cityJson.js"></script>
+		<script src="dist/js/address/citySet.js"></script>
+		<script src="dist/js/address/Popt.js"></script>
+		<script src="dist/js/address/address_mapping.js"></script>
+		<script src="dist/js/loading.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/indexEdit.css"/>
+		
+		
+	</head>
+	<body>
+		<div class="main-box">
+			
+			<!--<div class="road-link">
+				<span>用户首页</span>><span>批量加人</span>
+			</div>
+			<p class="tip-info"><span class="red-font">红色标示</span>位置为错误信息，请核实后修改或重新上传。<span class="greed-font">绿色标示</span>位置为缺失信息，请补充。如有疑问请拨打客服电话：400-886-2309/010/53930529</p>
+			
+			<p class="insur-name">方案名称-保险极客团队综合福利保障-家属</p>-->
+			
+			
+			<div class="options-box">
+				<div class="options-box-item">
+					<button>返回</button>
+					<button onclick="subConfirmFun()">确认提交</button>
+					<span id="saveTime">已保存 6月12日 12:10</span>
+					<button onclick="menuSaveFun()">保存</button>
+					<button onclick="unredoBtnFun(1)">撤销</button>
+					<button onclick="unredoBtnFun(2)">重做</button>
+					插入行：<button onclick="alterCell(1)">向上</button><button onclick="alterCell(2)">向下</button>
+					<button onclick="copyAndPaste('copy')">复制</button>
+					<button onclick="copyAndPaste('paste')">粘贴</button>
+					<button>删除</button>
+					<button>查找</button>
+					
+				</div>
+				
+			</div>
+			
+			<div class="options-box" style="white-space: nowrap;">
+				<div class="filter-menu">
+					<span>批量操作：</span>
+					<span class="menu-name">证件类型</span>
+					<select name="" class="med-type-select" onchange="mutiSetCertType(this)">
+						<option value="">选择医保类型</option>
+						<option value="0">身份证</option>
+						<option value="1">出生证</option>
+						<option value="2">护照</option>
+					</select>
+					<span class="menu-name">医保类型</span>
+					<select name="" class="med-type-select" onchange="mutiSetInsurType(this)">
+						<option value="">选择医保类型</option>
+						<option value="1">城镇职工（含在职和退休）</option>
+						<option value="2">城镇居民</option>
+						<option value="3">新型农村合作医疗</option>
+						<option value="4">均未参加</option>
+					</select>
+					<span class="menu-name">医保地址</span>
+					<input readonly="readonly" onclick="mutiSelectCity(this)" onchange="mutiSetAddress(this)" class="med-type-select" type="text" placeholder="选择医保地址" data-prefix="add-filter" name="" id="" value="" />
+					
+					<span class="menu-name">出生日期</span>
+					<input class=" time-input datetime form-control med-type-select" onchange="mutiSetBirthTime(this)" type="text" placeholder="出生日期" name="" id="" value="" />
+					
+					<span class="menu-name">员工关系</span>
+					<select name="" class="med-type-select" onchange="mutiSetRelation(this)">
+						<option value="">选择员工关系</option>
+						<option value="0">本人</option>
+						<option value="1">子女</option>
+						<option value="2">配偶</option>
+						<option value="3">父母</option>
+					</select>
+					
+					
+					
+					<span class="menu-name">批量设置保障时间</span>
+					<input class=" time-input datetime form-control med-type-select" onchange="mutiSetStartTime(this)" type="text" placeholder="起始时间" name="" id="" value="" />
+					 - 
+				 	<input class=" time-input datetime form-control med-type-select" onchange="mutiSetEndTime(this)" type="text" placeholder="结束时间" name="" id="" value="" />
+					
+					<span class="menu-name">预算档位</span>
+					<select name="" class="med-type-select" onchange="mutiSetDang(this)">
+						<option value="">选择员预算档位</option>
+						<option value="1">500</option>
+						<option value="2">800</option>
+						<option value="3">1000</option>
+					</select>
+					
+					<span class="menu-name">方案名称</span>
+					<select name="" class="med-type-select" onchange="mutiSetPlanName(this)">
+						<option value="">选择方案名称</option>
+						<option value="1">保险极客员工福利方案</option>
+						<option value="2">极客+</option>
+					</select>
+					
+					
+					
+				</div>
+				
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="main-table-box">
+				<div class="" id="main-table-tar">
+					
+				</div>
+			</div>
+			
+			
+			<div class="table-bot-bar">
+				<p>增加 <input type="text" name="" maxlength="3" id="addRowsNumInp" value="100" style="text-align: center;"/> 行 <button onclick="addTableRows()">确定</button></p>
+			</div>
+			
+			
+			<!--<div class="foot-btns-box">
+				<div class="foot-btn btn-out-excel" onclick="getDataOut()">
+					导出
+				</div>
+				<div class="foot-btn btn-confirm" onclick="getMeadVal()">
+					确认提交
+				</div>
+			</div>
+			<div id="">
+				<p>导出数据：</p>
+				<p id="outDataaa"></p>
+			</div>-->
+		</div>
+		
+		
+		
+		<script src="dist/js/igCustom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/indexEdit.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>

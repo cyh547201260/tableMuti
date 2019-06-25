@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		
+		<link rel="stylesheet" type="text/css" href="dist/css/jquery.jexcel.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/jquery.jcalendar.css"/>
+		<script src="dist/js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="dist/js/handsontable.full.min.js"></script>
+		<link href="dist/css/handsontable.full.min.css" rel="stylesheet" media="screen">
+		<script src="dist/js/zh-CN.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css" type="text/css" />-->
+		
+		<link rel="stylesheet" type="text/css" href="dist/css/insgeek.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="dist/css/datepicker3.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/global.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/loading.css"/>
+		
+		<script src="dist/js/bootstrap-datepicker.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/jquery.jexcel.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/jquery.jcalendar.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		
+		<script src="dist/js/address/cityJson.js"></script>
+		<script src="dist/js/address/citySet.js"></script>
+		<script src="dist/js/address/Popt.js"></script>
+		<script src="dist/js/address/address_mapping.js"></script>
+		<script src="dist/js/loading.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		
+		
+	</head>
+	<body>
+		<div class="main-box">
+			
+			<div class="road-link">
+				<span>用户首页</span>><span>批量加人</span>
+			</div>
+			<p class="tip-info"><span class="red-font">红色标示</span>位置为错误信息，请核实后修改或重新上传。<span class="greed-font">绿色标示</span>位置为缺失信息，请补充。如有疑问请拨打客服电话：400-886-2309/010/53930529</p>
+			
+			<p class="insur-name">方案名称-保险极客团队综合福利保障-家属</p>
+			
+			<div class="filter-menu">
+				<span class="menu-name">批量设置医保类型</span>
+				<select name="" class="med-type-select" onchange="mutiSetInsurType(this)">
+					<option value="">选择医保类型</option>
+					<option value="1">城镇居民</option>
+					<option value="2">城镇职工</option>
+				</select>
+				<span class="menu-name">批量设置医保地址</span>
+				<input readonly="readonly" onclick="mutiSelectCity(this)" onchange="mutiSetAddress(this)" class="med-type-select" type="text" placeholder="选择医保地址" data-prefix="add-filter" name="" id="" value="" />
+				
+				<span class="menu-name">批量设置保障时间</span>
+				<input class=" time-input datetime form-control med-type-select" onchange="mutiSetStartTime(this)" type="text" placeholder="起始时间" name="" id="" value="" />
+				 - 
+			 	<input class=" time-input datetime form-control med-type-select" onchange="mutiSetEndTime(this)" type="text" placeholder="结束时间" name="" id="" value="" />
+				
+			</div>
+			<div class="main-table-box">
+				<div class="" id="main-table-tar">
+					
+				</div>
+			</div>
+			
+			
+			<div class="foot-btns-box">
+				<div class="foot-btn btn-out-excel" onclick="getDataOut()">
+					导出
+				</div>
+				<div class="foot-btn btn-confirm" onclick="getMeadVal()">
+					确认提交
+				</div>
+			</div>
+			<div id="">
+				<p>导出数据：</p>
+				<p id="outDataaa"></p>
+			</div>
+		</div>
+		
+		
+		
+		
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
